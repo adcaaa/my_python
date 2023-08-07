@@ -1,0 +1,23 @@
+import tkinter as tk
+
+root = tk.Tk()
+root.title('计算器')
+root.geometry('300x300+200+200')
+root['background'] = 'lightblue'
+
+frame = tk.Frame(root)
+def simulication():
+    result = '=' + str(eval(entry.get()))
+    label.config(text=result)
+
+dric = tk.StringVar()
+entry = tk.Entry(frame, font=('宋体', 20), textvariable=dric)
+button = tk.Button(frame, command=simulication, text='等于')
+label = tk.Label(frame, font=('宋体', 20))
+
+frame.pack()
+entry.pack()
+button.pack(side=tk.RIGHT)
+label.pack(side=tk.LEFT)
+
+frame.mainloop()
